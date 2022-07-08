@@ -1,0 +1,36 @@
+{
+  "name": "vue-antd-admin",
+  "version": "0.0.0",
+  "private": true,
+  "author": {
+    "name": "WangYang",
+    "email": "i@wymoe.com"
+  },
+  "scripts": {
+    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "preview": "vite preview",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "ant-design-vue": "^3.2.10",
+    "axios": "^0.27.2",
+    "pinia": "^2.0.14",
+    "vue": "^3.2.25",
+    "vue-router": "^4.1.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.25.2",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "eslint": "^8.19.0",
+    "typescript": "^4.5.4",
+    "unocss": "^0.43.2",
+    "unplugin-vue-components": "^0.21.1",
+    "vite": "^2.9.9",
+    "vite-plugin-html": "^3.2.0",
+    "vue-tsc": "^0.34.7",
+    "husky": "^8.0.0"
+  }
+}
