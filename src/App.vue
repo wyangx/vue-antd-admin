@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
+  <img src="/vite.svg" class="logo" alt="Vite logo">
 </template>
 
-<style>
+<style scoped>
 
 </style>
