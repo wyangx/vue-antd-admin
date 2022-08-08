@@ -1,16 +1,18 @@
 <script setup lang='ts'>
 import {
-  MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons-vue'
+import { useAppStore } from '../store/index.js'
+import Header from './Header.vue'
 
-const collapsed = ref<boolean>(false)
+const app = useAppStore()
+
 const selectedKeys = ref<string[]>(['1'])
 </script>
 
 <template>
   <a-layout>
-    <a-layout-sider v-model:collapsed="collapsed" :trigger="null" collapsible>
+    <a-layout-sider v-model:collapsed="app.isCollapse" :trigger="null" collapsible>
       <div class="logo" />
       <a-menu v-model:selectedKeys="selectedKeys" theme="dark" mode="inline">
         <a-menu-item key="1">
@@ -29,12 +31,7 @@ const selectedKeys = ref<string[]>(['1'])
     </a-layout-sider>
     <a-layout>
       <a-layout-header>
-        <MenuUnfoldOutlined
-          v-if="collapsed"
-          class="trigger"
-          @click="() => (collapsed = !collapsed)"
-        />
-        <MenuFoldOutlined v-else class="trigger" @click="() => (collapsed = !collapsed)" />
+        <Header />
       </a-layout-header>
       <a-layout-content>
         <router-view />
@@ -54,16 +51,6 @@ const selectedKeys = ref<string[]>(['1'])
   .ant-layout-header{
     background-color: #fff;
     padding: 0;
-    .trigger {
-      font-size: 18px;
-      line-height: 64px;
-      padding: 0 24px;
-      cursor: pointer;
-      transition: color 0.3s;
-      &:hover{
-        color: #1890ff;
-      }
-    }
   }
 }
 </style>
