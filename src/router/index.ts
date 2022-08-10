@@ -16,6 +16,7 @@ export const router = createRouter({
       children: [
         {
           path: '',
+          name: 'DashboardIndex',
           component: () => import('@/views/doshboard/index.vue'),
         },
       ],
